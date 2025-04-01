@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>語音聊天機器人</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <!-- 性別選擇器 -->
+    <div class="gender-selector">
+        <label for="gender-select">選擇角色:</label>
+        <select id="gender-select" class="form-select" onchange="changeGender()">
+            <option value="male" selected>男生</option>
+            <option value="female">女生</option>
+        </select>
+    </div>
+
+    <!-- 3D 模型顯示容器 -->
+    <div id="3d-container" class="aicontainer"></div>
+
+    <!-- 加載提示 -->
+    <div id="loading-indicator" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #333; font-weight: bold;">
+        模型加載中，請稍等...
+    </div>
+
+    <!-- 輸入欄和按鈕 -->
+    <div id="controls" class="controls">
+        <div class="leftBox">
+          <div class="buttonRow">
+            <button type="button" class="btn btn-outline-light buttonItem" onclick="showTextInput()">輸入文字</button>
+            <button type="button" class="btn btn-outline-light buttonItem" onclick="showSpeechInput()">語音輸入</button>
+          </div>
+
+          <div class="box">
+            <div style="display: block;" class="mainChatBox">
+              <div class="input-group">
+                <input type="text" class="form-control" id="userInput" placeholder="請輸入或說話" aria-label="請輸入或說話" aria-describedby="button-addon2">
+                <button class="btn btn-outline-info sendBtn" type="button" id="button-addon2" onclick="sendMessage()">發送</button>
+              </div>
+            </div>
+            <div style="display: none;" class="mainLisBox">
+              <div class="lisBox">
+                <button type="button" class="btn btn-light lisBtn" onclick="startSpeechRecognition()">語音輸入</button>
+                <div class="text">請點擊按鈕並說話</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rightBox">
+          <div id="chatbox"></div>
+        </div>
+    </div>
+
+    <!-- 引入 Three.js 和 GLTFLoader -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+    <script>
+        let scene, camera, renderer, robotModel, mixer, controls;
+        let animations = {}; // 儲存動畫
+        let light;
+        let currentAnimation = null; // 當前播放的動畫
+        let modelLoaded = false; // 模型是否已加載完成
+        let currentAudio = null; // 當前播放的音頻元素
+        let currentGender = "male"; // 預設為男生
+        
+        // 在頁面載入時從本地存儲中讀取性別設定
+        window.onload = function() {
+            const savedGender = localStorage.getItem('preferredGender');
+            if (savedGender) {
+                currentGender = savedGender;
+                document.getElementById('gender-select').value = savedGender;
+            }
+            
+            // Load chat history
+            //loadChatHistory();
+        };
+
+        function showTextInput() {
+            document.querySelector('.mainChatBox').style.display = 'block';
+            document.querySelector('.mainLisBox').style.display = 'none';
+        }
+          
+        function showSpeechInput() {
+            document.querySelector('.mainChatBox').style.display = 'none';
+            document.querySelector('.mainLisBox').style.display = 'block';
+        }
+
+     // 切換性別
+     function changeGender() {
+        const genderSelect = document.getElementById('gender-select');
+        const newGender = genderSelect.value;
+        
+        // If gender hasn't changed, no need to reload
+        if (currentGender === newGender) return;
+        
+        currentGender = newGender;
+        
+        // Save to local storage
+        localStorage.setItem('preferredGender', currentGender);
+        
+        // Clean up animation system completely
+        if (mixer) {
+            mixer.stopAllAction();
+        }
+        
+        // Remove existing model and explicitly clean up
+        if (robotModel) {
+            scene.remove(robotModel);
+        }
+        
+        // Hard reset all animation-related variables
+        robotModel = null;
+        mixer = null;
+        animations = {};
+        currentAnimation = null;
+        
+        // Reset clock - add this variable at the top of your script if not already there
+        // Add this declaration near your other global variables: let clock = new THREE.Clock();
+        clock = new THREE.Clock();
+        
+        // Reload model
+        modelLoaded = false;
+        loadModel();
+        
+        // Notify server of gender change (optional)
+        fetch('/set_gender', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ gender: currentGender }),
+        })
+        .then(response => response.json())
+        .then(data => console.log('Gender set to:', data.gender))
+        .catch(error => console.error('Error setting gender:', error));
+    }
+
+        // 初始化 Three.js 和模型
+        function init() {
+            // 創建場景
+            scene = new THREE.Scene();
+  
+            // 獲取當前時間
+            const currentHour = new Date().getHours();
+            
+            let backgroundImage;
+            let bodyBackgroundColor;
+  
+            if (currentHour >= 6 && currentHour < 18) {
+                // 白天背景（圖片 & body 背景顏色）
+                backgroundImage = "../static/image/morning.jpg";
+                bodyBackgroundColor = "#003e31"; // 綠色
+            } else {
+                // 夜晚背景（圖片 & body 背景顏色）
+                backgroundImage = "../static/image/night.jpg";
+                bodyBackgroundColor = "#00014f"; // 深藍色背景
+            }
+  
+            // 設定 body 的背景顏色
+            document.body.style.backgroundColor = bodyBackgroundColor;
+  
+            // 加載背景圖片
+            const loader = new THREE.TextureLoader();
+            loader.load(
+                backgroundImage,
+                function(texture) {
+                    scene.background = texture; // 設置背景
+                },
+                undefined,
+                function(err) {
+                    console.error("背景圖片加載失敗", err);
+                }
+            );
+  
+            // 創建相機
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / 500, 0.1, 1000);
+            camera.position.z = 3;
+  
+            // 創建渲染器
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(window.innerWidth, 500);
+            renderer.outputEncoding = THREE.sRGBEncoding;
+            document.getElementById("3d-container").appendChild(renderer.domElement);
+  
+            // 加入光源
+            light = new THREE.AmbientLight(0xffffff, 0.8);
+            scene.add(light);
+  
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 1.0);
+            directionalLight.position.set(0, 10, 10);
+            directionalLight.castShadow = true;
+            scene.add(directionalLight);
+  
+            const fillLight = new THREE.DirectionalLight(0xffffff, 0.5);
+            fillLight.position.set(0, 5, -10);
+            scene.add(fillLight);
+  
+            // 初始化控制
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.25;
+            controls.screenSpacePanning = false;
+            controls.enableRotate = false;
+            controls.enableZoom = false;
+            controls.enablePan = false;
+  
+            // 渲染場景
+            renderer.render(scene, camera);
+  
+            // 加載模型
+            loadModel();
+  
+            // 處理窗口大小調整
+            window.addEventListener("resize", onWindowResize, false);
+        }
+
+        // 處理窗口大小調整
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / 500;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, 500);
+            renderer.render(scene, camera); // 調整大小後立即重新渲染
+        }
+
+        // 加載單一模型
+        function loadModel() {
+            console.log(`開始加載${currentGender === 'male' ? '男生' : '女生'}模型...`);
+            const loader = new THREE.GLTFLoader();
+            
+            // 顯示加載提示
+            showLoadingIndicator(true);
+            
+            // 根據性別選擇模型
+            const modelPath = currentGender === 'male' 
+                ? '/static/models/mix boy.glb' 
+                : '/static/models/mix girl.glb';
+            
+            // 加載主要模型
+            loader.load(
+                modelPath, 
+                function(gltf) {
+                    console.log("模型加載成功");
+                    robotModel = gltf.scene;
+                    scene.add(robotModel);
+                    robotModel.scale.set(3, 3, 3);
+                    robotModel.position.set(0, -3, -3);
+
+                    // 建立動畫控制器
+                    mixer = new THREE.AnimationMixer(robotModel);
+                    
+                    // 取得動畫並儲存
+                    gltf.animations.forEach((clip, index) => {
+                        animations[clip.name + "_" + index] = mixer.clipAction(clip);
+                        console.log("動畫名稱:", clip.name, " 動畫索引:", index);
+                    });
+
+                    // 所有動畫加載完成
+                    modelLoaded = true;
+                    showLoadingIndicator(false);
+                    
+                    // 開始播放揮手動畫
+                    playAnimation("wave_2");
+
+                    // 揮手動畫結束後播放站立動畫
+                    animations["wave_2"].reset();
+                    animations["wave_2"].play();
+                    animations["wave_2"].clampWhenFinished = true;
+                    animations["wave_2"].setLoop(THREE.LoopOnce, 1); // 播放一次後停止
+                    
+                    animations["wave_2"].onFinished = function() {
+                        playAnimation("stand_0"); // 揮手結束後播放站立動畫
+                    };
+
+                    // 開始動畫循環
+                    animate();
+                },
+                function(xhr) {
+                    console.log( (xhr.loaded / xhr.total * 100) + '% 模型加載中' );
+                },
+                function(error) {
+                    console.error('模型加載失敗:', error);
+                    showLoadingIndicator(false, "模型加載失敗，請刷新頁面重試");
+                }
+            );
+        }
+
+        // 顯示或隱藏加載提示
+        function showLoadingIndicator(show, message = "模型加載中，請稍等...") {
+            const indicator = document.getElementById('loading-indicator');
+            if (show) {
+                indicator.style.display = 'block';
+                indicator.textContent = message;
+            } else {
+                indicator.style.display = 'none';
+            }
+        }
+
+        // 播放指定的動畫
+        function playAnimation(animationName) {
+            if (!animations[animationName]) {
+                console.error("嘗試播放不存在的動畫:", animationName);
+                return;
+            }
+
+            console.log("切換動畫到:", animationName);
+
+            // 停止當前動畫
+            if (currentAnimation) {
+                currentAnimation.stop();
+            }
+
+            // 播放新動畫
+            currentAnimation = animations[animationName];
+            currentAnimation.reset();
+            currentAnimation.play();
+        }
+
+        // 動畫循環
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            if (controls) controls.update();
+            
+            // Update animation mixer with proper delta time
+            if (mixer) {
+                const delta = clock.getDelta(); // Get time since last frame
+                mixer.update(delta);  // Use actual time delta instead of fixed value
+            }
+            
+            // Ensure every frame is rendered
+            if (renderer && scene && camera) {
+                renderer.render(scene, camera);
+            }
+        }
+        let clock;
+        clock = new THREE.Clock();
+
+        // 開啟語音辨識
+        function startSpeechRecognition() {
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.lang = 'zh-TW';
+            recognition.start();
+
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript;
+                document.getElementById("userInput").value = transcript;
+                sendMessage();
+            };
+
+            recognition.onerror = function(event) {
+                console.error("語音辨識錯誤:", event.error);
+            };
+        }
+
+        // 發送訊息到伺服器
+        function sendMessage() {
+            const message = document.getElementById("userInput").value;
+            if (message.trim() === "") return;
+        
+            // Clear input box right away
+            document.getElementById("userInput").value = '';
+        
+            // Show loading indicator
+            const chatbox = document.getElementById("chatbox");
+            chatbox.innerHTML = `<p><strong>機器人:</strong> <em>思考中...</em></p>`;
+        
+            // Send to server
+            fetch(`/chat?message=${encodeURIComponent(message)}&gender=${currentGender}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display only the latest response
+                displayResponse(data.response);
+                
+                // Let robot respond with voice
+                speakResponse(data.response, data.audio);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                displayResponse("抱歉，通訊發生錯誤，請稍後再試。");
+            });
+        }
+        // 顯示機器人回應
+        function displayResponse(responseText) {
+            const chatbox = document.getElementById("chatbox");
+            // Only display the latest robot response, replacing any previous content
+            chatbox.innerHTML = `<p><strong>機器人:</strong> ${responseText}</p>`;
+        }
+
+        // 播放 Google TTS 語音
+        function speakResponse(text, audioData) {
+            if (!modelLoaded) {
+                console.warn("模型尚未加載完成，無法播放講話動畫");
+                
+                if (audioData) {
+                    playAudio(audioData);
+                } else {
+                    // 降級：使用瀏覽器內建 TTS
+                    const utterance = new SpeechSynthesisUtterance(text);
+                    window.speechSynthesis.speak(utterance);
+                }
+                return;
+            }
+
+            // 停止當前正在播放的音頻
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio = null;
+            }
+            window.speechSynthesis.cancel(); // 停止任何正在進行的合成語音
+
+            // 開始講話時播放講話動畫
+            console.log("開始講話，播放講話動畫");
+            playAnimation("talk_1");
+
+            if (audioData) {
+                // 使用 Google TTS 生成的音頻
+                playAudio(audioData, function() {
+                    console.log("講話結束，回到站立動畫");
+                    playAnimation("stand_0");
+                });
+            } else {
+                // 降級：使用瀏覽器內建 TTS
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'zh-TW';
+                
+                // 根據性別調整語音參數
+                if (currentGender === 'male') {
+                    utterance.pitch = 0;
+                    utterance.rate = 1.0;
+                } else {
+                    utterance.pitch = 1.2;
+                    utterance.rate = 0.8;
+                }
+                
+                utterance.volume = 0.9;
+
+                utterance.onend = function() {
+                    console.log("講話結束，回到站立動畫");
+                    playAnimation("stand_0");
+                };
+                
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        // 播放 base64 編碼的音頻
+        function playAudio(base64Data, onEndCallback) {
+            // 創建音頻元素
+            const audio = new Audio('data:audio/mp3;base64,' + base64Data);
+            currentAudio = audio;
+            
+            // 設置結束回調
+            audio.onended = function() {
+                if (onEndCallback) onEndCallback();
+                currentAudio = null;
+            };
+            
+            // 播放音頻
+            audio.play().catch(error => {
+                console.error('播放音頻失敗:', error);
+                // 如果播放失敗，仍然調用回調函數
+                if (onEndCallback) onEndCallback();
+            });
+        }
+        function loadChatHistory() {
+            fetch('/history')
+                .then(response => response.json())
+                .then(history => {
+                    const chatbox = document.getElementById("chatbox");
+                    chatbox.innerHTML = ''; // Clear chatbox
+                    
+                    // Display the last 10 messages (or all if fewer)
+                    const displayCount = Math.min(history.length, 10);
+                    for (let i = 0; i < displayCount; i++) {
+                        const chat = history[i];
+                        chatbox.innerHTML += `<p><strong>你:</strong> ${chat.user_message}</p>`;
+                        chatbox.innerHTML += `<p><strong>機器人:</strong> ${chat.bot_response}</p>`;
+                    }
+                    
+                    chatbox.scrollTop = chatbox.scrollHeight;
+                })
+                .catch(error => {
+                    console.error('Error loading chat history:', error);
+                });
+        }
+
+        // 呼叫初始化
+        console.log("初始化應用...");
+        init();
+    </script>
+</body>
+</html>

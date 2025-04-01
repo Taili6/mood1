@@ -1,0 +1,80 @@
+[
+    {
+        "timestamp": "2025-03-31 21:05:26",
+        "user_message": "嗨",
+        "bot_response": "您好！有什麼我可以幫助您的嗎？",
+        "gender": "male"
+    },
+    {
+        "timestamp": "2025-03-31 20:59:09",
+        "user_message": "沒有",
+        "bot_response": "好的，請告訴我有關你更多的問題或想法，我會很樂意提供幫助！",
+        "gender": "male"
+    },
+    {
+        "timestamp": "2025-03-31 20:58:56",
+        "user_message": "嗨",
+        "bot_response": "你好！有什麼我可以幫助你的嗎？",
+        "gender": "female"
+    },
+    {
+        "timestamp": "2025-03-31 20:58:38",
+        "user_message": "嗨",
+        "bot_response": "您好！有什麼我可以幫助您的嗎？",
+        "gender": "male"
+    },
+    {
+        "timestamp": "2025-03-31 20:58:12",
+        "user_message": "嗨",
+        "bot_response": "嗨！有什麼我可以幫助你的嗎？",
+        "gender": "male"
+    },
+    {
+        "timestamp": "2025-03-31 20:58:03",
+        "user_message": "你好",
+        "bot_response": "你好！有什麼我可以幫忙的嗎？",
+        "gender": "female"
+    },
+    {
+        "timestamp": "2025-03-31 20:57:45",
+        "user_message": "嗨",
+        "bot_response": "嗨！有什麼我可以幫助你的嗎？",
+        "gender": "female"
+    },
+    {
+        "timestamp": "2025-03-31 20:55:52",
+        "user_message": "你過的好嗎",
+        "bot_response": "謝謝你的關心！作為一個AI，我不會有情感或狀態，但我很高興能幫助你。有什麼我可以協助的嗎？",
+        "gender": "female"
+    },
+    {
+        "timestamp": "2025-03-31 20:55:40",
+        "user_message": "嗨",
+        "bot_response": "您好！有什麼我可以幫助您的嗎？",
+        "gender": "female"
+    },
+    {
+        "timestamp": "2025-03-31 20:47:51",
+        "user_message": "我心情不好",
+        "bot_response": "抱歉聽到你心情不好。可以和我聊聊發生了什麼事嗎？或者，如果你願意，我可以分享一些讓人放鬆的建議。",
+        "gender": "female"
+    },
+    {
+        "timestamp": "2025-03-31 20:47:10",
+        "user_message": "嗨",
+        "bot_response": "嗨！你好嗎？需要任何幫助或想聊什麼特別的話題嗎？",
+        "gender": "female"
+    },
+    {
+        "timestamp": "2025-03-31 20:43:18",
+        "user_message": "你好阿",
+        "bot_response": "你好！有什麼我可以幫助你的嗎？",
+        "gender": "female"
+    },
+    {
+        "timestamp": "2025-03-31 20:41:53",
+        "user_message": "嗨",
+        "bot_response": "你好！今天過得怎麼樣？有什麼我可以幫助你的嗎？",
+        "gender": "female"
+    }
+]
