@@ -1,5 +1,35 @@
 [
     {
+        "timestamp": "2025-04-01 20:41:58",
+        "user_message": "你好",
+        "bot_response": "你好！有什麼我可以幫助你的嗎？",
+        "gender": "male"
+    },
+    {
+        "timestamp": "2025-04-01 20:41:45",
+        "user_message": "你好",
+        "bot_response": "你好！有什麼我可以幫助你的嗎？",
+        "gender": "male"
+    },
+    {
+        "timestamp": "2025-04-01 20:41:34",
+        "user_message": "好棒",
+        "bot_response": "謝謝！如果你有任何問題或需要幫助，隨時告訴我哦！",
+        "gender": "female"
+    },
+    {
+        "timestamp": "2025-04-01 20:41:22",
+        "user_message": "嗨",
+        "bot_response": "你好！今天過得怎麼樣呢？",
+        "gender": "male"
+    },
+    {
+        "timestamp": "2025-04-01 20:41:00",
+        "user_message": "嗨",
+        "bot_response": "你好！有什麼我可以幫助你的嗎？",
+        "gender": "female"
+    },
+    {
         "timestamp": "2025-03-31 21:05:26",
         "user_message": "嗨",
         "bot_response": "您好！有什麼我可以幫助您的嗎？",

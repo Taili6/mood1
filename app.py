@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify, render_template
-from flask_cors import CORS
-
+from flask_cors import CORS 
 import openai
 import os
 import requests
@@ -9,7 +8,6 @@ from datetime import datetime
 
 # 設定 OpenAI API 金鑰
 openai.api_key = ''
-
 # 設定 Google API 金鑰
 GOOGLE_API_KEY = ''
 
