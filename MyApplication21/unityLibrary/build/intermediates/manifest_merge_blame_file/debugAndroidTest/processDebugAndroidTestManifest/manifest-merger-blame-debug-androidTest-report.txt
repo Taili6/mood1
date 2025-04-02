@@ -1,0 +1,147 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.unity3d.player.test" >
+4
+5    <uses-sdk
+5-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest15872704603058188838.xml:5:5-74
+6        android:minSdkVersion="23"
+6-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest15872704603058188838.xml:5:15-41
+7        android:targetSdkVersion="35" />
+7-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest15872704603058188838.xml:5:42-71
+8
+9    <instrumentation
+9-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest15872704603058188838.xml:11:5-15:73
+10        android:name="android.test.InstrumentationTestRunner"
+10-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest15872704603058188838.xml:11:22-75
+11        android:functionalTest="false"
+11-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest15872704603058188838.xml:14:22-52
+12        android:handleProfiling="false"
+12-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest15872704603058188838.xml:13:22-53
+13        android:label="Tests for com.unity3d.player.test"
+13-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest15872704603058188838.xml:15:22-71
+14        android:targetPackage="com.unity3d.player.test" />
+14-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest15872704603058188838.xml:12:22-69
+15
+16    <uses-feature android:glEsVersion="0x00030000" />
+16-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:8:5-54
+16-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:8:19-51
+17    <uses-feature
+17-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:9:5-11:36
+18        android:name="android.hardware.vulkan.version"
+18-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:10:9-55
+19        android:required="false" />
+19-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:11:9-33
+20    <uses-feature
+20-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:12:5-14:36
+21        android:name="android.hardware.touchscreen"
+21-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:13:9-52
+22        android:required="false" />
+22-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:14:9-33
+23    <uses-feature
+23-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:15:5-17:36
+24        android:name="android.hardware.touchscreen.multitouch"
+24-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:16:9-63
+25        android:required="false" />
+25-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:17:9-33
+26    <uses-feature
+26-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:18:5-20:36
+27        android:name="android.hardware.touchscreen.multitouch.distinct"
+27-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:19:9-72
+28        android:required="false" />
+28-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:20:9-33
+29
+30    <application
+30-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest15872704603058188838.xml:7:5-9:19
+31        android:debuggable="true"
+32        android:enableOnBackInvokedCallback="false"
+32-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:23:9-52
+33        android:extractNativeLibs="true" >
+34        <uses-library android:name="android.test.runner" />
+34-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest15872704603058188838.xml:8:9-60
+34-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest15872704603058188838.xml:8:23-57
+35
+36        <meta-data
+36-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:25:9-27:33
+37            android:name="unity.splash-mode"
+37-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:26:13-45
+38            android:value="0" />
+38-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:27:13-30
+39        <meta-data
+39-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:28:9-30:36
+40            android:name="unity.splash-enable"
+40-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:29:13-47
+41            android:value="True" />
+41-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:30:13-33
+42        <meta-data
+42-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:31:9-33:36
+43            android:name="unity.launch-fullscreen"
+43-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:32:13-51
+44            android:value="True" />
+44-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:33:13-33
+45        <meta-data
+45-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:34:9-36:36
+46            android:name="unity.render-outside-safearea"
+46-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:35:13-57
+47            android:value="True" />
+47-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:36:13-33
+48        <meta-data
+48-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:37:9-39:50
+49            android:name="notch.config"
+49-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:38:13-40
+50            android:value="portrait|landscape" />
+50-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:39:13-47
+51        <meta-data
+51-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:40:9-42:36
+52            android:name="unity.auto-report-fully-drawn"
+52-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:41:13-57
+53            android:value="true" />
+53-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:42:13-33
+54        <meta-data
+54-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:43:9-45:36
+55            android:name="unity.auto-set-game-state"
+55-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:44:13-53
+56            android:value="true" />
+56-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:45:13-33
+57        <meta-data
+57-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:46:9-48:36
+58            android:name="unity.strip-engine-code"
+58-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:47:13-51
+59            android:value="true" />
+59-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:48:13-33
+60
+61        <activity
+61-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:50:9-66:20
+62            android:name="com.unity3d.player.UnityPlayerActivity"
+62-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:51:13-66
+63            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+63-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:52:13-194
+64            android:enabled="true"
+64-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:53:13-35
+65            android:exported="true"
+65-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:54:13-36
+66            android:hardwareAccelerated="false"
+66-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:55:13-48
+67            android:launchMode="singleTask"
+67-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:56:13-44
+68            android:resizeableActivity="false"
+68-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:57:13-47
+69            android:screenOrientation="fullUser"
+69-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:58:13-49
+70            android:theme="@style/UnityThemeSelector" >
+70-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:59:13-54
+71            <meta-data
+71-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:60:13-62:40
+72                android:name="unityplayer.UnityActivity"
+72-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:61:17-57
+73                android:value="true" />
+73-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:62:17-37
+74            <meta-data
+74-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:63:13-65:40
+75                android:name="notch_support"
+75-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:64:17-45
+76                android:value="true" />
+76-->[:unityLibrary] C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\build\intermediates\merged_manifest\debug\processDebugManifest\AndroidManifest.xml:65:17-37
+77        </activity>
+78    </application>
+79
+80</manifest>

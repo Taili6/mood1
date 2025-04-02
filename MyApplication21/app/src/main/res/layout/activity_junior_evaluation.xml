@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:gravity="center"
+    android:background="@drawable/img_1">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="423dp"
+        android:layout_height="556dp"
+        android:layout_weight="1"
+        android:orientation="vertical" />
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="580dp"
+        android:backgroundTint="#A6C4E5"
+        android:gravity="center"
+        android:text="下一題"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/previous_button"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="580dp"
+        android:layout_marginLeft="5dp"
+        android:backgroundTint="#A6C4E5"
+        android:gravity="center"
+        android:text="上一題"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="20sp" />
+    <TextView
+        android:layout_width="135dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="780.59dp"
+        android:text="Mood Check"
+        android:textColor="#A6C4E5"
+        android:textSize="20sp" />
+
+</FrameLayout>

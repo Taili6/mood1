@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_1">
+
+    <ImageButton
+        android:id="@+id/adult_button"
+        android:layout_width="226dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="172dp"
+        android:background="@drawable/img_11"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/college_student_button"
+        android:layout_width="226dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/img_13"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adult_button" />
+
+    <ImageButton
+        android:id="@+id/teenager_button"
+        android:layout_width="226dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/img_12"
+        android:text="12~18歲青少年適用"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/college_student_button" />
+
+    <ImageButton
+        android:id="@+id/Back_button"
+        android:layout_width="62dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="44dp"
+        android:background="?attr/selectableItemBackground"
+        android:contentDescription="@string/back_button_description"
+        android:src="@drawable/img_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="135dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="780.59dp"
+        android:text="Mood Check"
+        android:textColor="#A6C4E5"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#FEFEFE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/mute_button"
+            android:layout_width="61dp"
+            android:layout_height="69dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/img_14"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/set_notification_button"
+            android:layout_width="43dp"
+            android:layout_height="62dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/img_8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/resource_button"
+            android:layout_width="51dp"
+            android:layout_height="60dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/img_9"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_1">
+
+    <!-- LOGO -->
+
+    <!-- 其他按鈕 -->
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="219dp"
+        android:layout_height="184dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/mood"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-104dp" />
+
+    <ImageButton
+        android:id="@+id/start_test_button"
+        android:layout_width="202dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/img_5"
+        android:contentDescription="開始檢測按鈕"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+    <ImageButton
+        android:id="@+id/ai_assistant_button"
+        android:layout_width="202dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/img_4"
+        android:contentDescription="AI 聊天按鈕"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/start_test_button" />
+
+    <ImageButton
+        android:id="@+id/mood_diary"
+        android:layout_width="202dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/img_10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ai_assistant_button" />
+
+    <!-- 底部導覽列 -->
+    <TextView
+        android:id="@+id/mood_check_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="76dp"
+        android:text="Mood Check"
+        android:textColor="#A6C4E5"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.006"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#FEFEFE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/mute_button"
+            android:layout_width="61dp"
+            android:layout_height="69dp"
+            android:layout_marginStart="28dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/img_14"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageButton
+            android:id="@+id/set_notification_button"
+            android:layout_width="43dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="92dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/img_8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/resource_button"
+            app:layout_constraintHorizontal_bias="0.029"
+            app:layout_constraintStart_toEndOf="@id/mute_button"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/resource_button"
+            android:layout_width="51dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="28dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/img_9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageButton
+        android:id="@+id/vrtual_robot"
+        android:layout_width="202dp"
+        android:layout_height="89dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/img_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mood_diary" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

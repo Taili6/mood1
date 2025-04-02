@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/question_text_view"
+        android:layout_width="382dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="-20dp"
+        android:gravity="center"
+        android:text="Question"
+        android:textSize="25sp" />
+
+    <RadioGroup
+        android:id="@+id/answer_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="-20dp">
+
+        <RadioButton
+            android:id="@+id/yes_radio_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="是"
+            android:textSize="25sp" />
+
+        <RadioButton
+            android:id="@+id/answer_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="否"
+            android:textSize="25sp" />
+    </RadioGroup>
+
+    <ImageButton
+        android:id="@+id/Back_button"
+        android:layout_width="114dp"
+        android:layout_height="112dp"
+        android:layout_marginLeft="-170dp"
+        android:layout_marginTop="-400dp"
+        android:background="?attr/selectableItemBackground"
+        android:contentDescription="@string/back_button_description"
+        android:src="@drawable/img_16" />
+
+</LinearLayout>

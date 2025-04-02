@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChatWithAIActivity"
+    android:background="@drawable/img_1">
+
+    <!-- 聊天訊息區域 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_layout" />
+
+    <!-- 歡迎文字 -->
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textSize="28dp" />
+
+    <!-- 底部輸入區域 -->
+    <RelativeLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:padding="8dp">
+
+        <!-- 麥克風按鈕 -->
+
+        <!-- 使用者輸入框 -->
+
+        <ImageButton
+            android:id="@+id/voice_toggle_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_alignEnd="@+id/voice_toggle_btn"
+            android:layout_marginEnd="0dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="切換語音輸入"
+            android:padding="8dp"
+            android:src="@drawable/img_17" />
+
+        <EditText
+            android:id="@+id/message_edit_text"
+            android:layout_width="267dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="-5dp"
+            android:layout_toStartOf="@id/send_btn"
+            android:layout_toEndOf="@id/voice_toggle_btn"
+            android:background="@drawable/rounded_corner"
+            android:hint="寫點什麼..."
+            android:padding="16dp" />
+
+        <Button
+            android:id="@+id/confirm_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="確認"
+            android:visibility="gone" />
+
+        <!-- 傳送按鈕 -->
+        <ImageButton
+            android:id="@+id/send_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="2dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="傳送訊息"
+            android:padding="8dp"
+            android:src="@drawable/baseline_send_24" />
+    </RelativeLayout>
+</RelativeLayout>

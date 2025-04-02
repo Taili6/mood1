@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/img_1">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="498dp" />
+
+    <Button
+        android:id="@+id/next_Button"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#A6C4E5"
+        android:text="下一題"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/previous_button"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="start"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="-50dp"
+        android:backgroundTint="#A6C4E5"
+        android:text="上一題"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="20sp" />
+    <TextView
+        android:layout_width="135dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="170.59dp"
+        android:text="Mood Check"
+        android:textColor="#A6C4E5"
+        android:textSize="20sp" />
+
+</LinearLayout>

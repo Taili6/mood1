@@ -1,0 +1,82 @@
+<resources>
+    <string name="back_button_description">返回</string>
+    <string name="app_name">Mood Check</string>
+    <string-array name="junior_questions">
+        <item>1. 我覺得現在比以前
+            更容易失去耐心</item>
+        <item>2. 我比平常更容易煩躁</item>
+        <item>3.我想離開目前的生活環境</item>
+        <item>4. 我覺得比以前容易生氣</item>
+        <item>5. 我心情覺得很不好</item>
+        <item>6. 我覺得整天懶洋洋、無精打采</item>
+        <item>7. 我覺得身體不舒服</item>
+        <item>8. 我常覺得胸悶</item>
+        <item>9. 最近大多數時候我覺得全身無力</item>
+        <item>10. 我覺得睡眠不安寧，很容易失眠或騖醒</item>
+        <item>11. 我覺得很不想上學</item>
+        <item>12. 我覺得對許多事都失去興趣</item>
+        <item>13. 我覺得坐立不安，靜不下來</item>
+        <item>14. 我覺得只想一個人獨處</item>
+        <item>15. 我覺得什麼事都不想做</item>
+        <item>16. 無論我做什麼都不會讓我覺得更好</item>
+        <item>17. 我覺得自己很差勁</item>
+        <item>18. 我覺得沒有辦法集中注意力</item>
+        <item>19. 我對自己很失望</item>
+        <item>20. 我想要消失不見</item>
+    </string-array>
+    <string-array name="college_questions">
+        <item>1. 我覺得心裡很難過</item>
+        <item>2. 碰到事情，我只想逃避</item>
+        <item>3. 我最近有自殺的念頭</item>
+        <item>4. 我心裡覺得很空虛</item>
+        <item>5. 沒有人瞭解我</item>
+        <item>6. 我感到絕望</item>
+        <item>7. 我覺得人生是灰暗的</item>
+        <item>8. 我對原本喜歡的事，變得沒興趣了</item>
+        <item>9. 我的胸口會緊緊、悶悶的</item>
+        <item>10. 我在掩飾心裡的痛苦</item>
+        <item>11. 我變得討厭自己</item>
+        <item>12. 我是別人的負擔</item>
+        <item>13. 我覺得很煩</item>
+        <item>14. 我上課唸書不能專心</item>
+        <item>15. 我感到昏昏沈沈的</item>
+        <item>16. 我覺得自己沒有未來</item>
+        <item>17. 我認為自己做人失敗</item>
+        <item>18. 我會莫名地想哭</item>
+        <item>19. 我覺得日子痛苦難熬</item>
+        <item>20. 我不想出門</item>
+        <item>21. 我覺得生活沒有意義</item>
+        <item>22. 我感到很寂寞</item>
+        <item>23. 我對任何事都提不起勁</item>
+        <item>24. 我覺得記憶力變差了</item>
+        <item>25. 我會猶豫不決，很難做決定</item>
+        <item>26. 我覺得自己是沒有價值的人</item>
+        <item>27. 沒有人關心我</item>
+        <item>28. 我不快樂</item>
+        <item>29. 我會想要傷害自己</item>
+        <item>30. 我會一直發呆</item>
+        <item>31. 我不想和別人交談</item>
+        <item>32. 我想自己躲起來</item>
+    </string-array>
+    <string-array name="adult_questions">
+        <item>1. 我常常覺得想哭</item>
+        <item>2. 我覺得心情不好</item>
+        <item>3. 我覺得比以前容易發脾氣</item>
+        <item>4. 我睡不好</item>
+        <item>5. 我覺得不想吃東西</item>
+        <item>6. 我覺得胸口悶悶的</item>
+        <item>7. 我覺得不輕鬆、不舒服 ( 不爽快 )</item>
+        <item>8. 我覺得身體疲勞虛弱、無力( 身體很虛、沒力氣、元氣及體力 )</item>
+        <item>9. 我覺得很煩</item>
+        <item>10. 我覺得記憶力不好</item>
+        <item>11. 我覺得做事時無法專心</item>
+        <item>12. 我覺得想事情或做事時，比平常要緩慢</item>
+        <item>13. 我覺得比以前較沒信心</item>
+        <item>14. 我覺得比較會往壞處想</item>
+        <item>15. 我覺得想不開、甚至想死</item>
+        <item>16. 我覺得對什麼事都失去興趣</item>
+        <item>17. 我覺得身體不舒服( 如頭痛、頭暈、心悸或肚子不舒服…等 )</item>
+        <item>18. 我覺得自己很沒用</item>
+
+    </string-array>
+</resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/img_1">
+
+    <!-- 返回上一頁的 ImageButton -->
+
+    <!-- 月份顯示 -->
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        android:layout_gravity="start"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="返回"
+        android:padding="8dp"
+        android:src="@drawable/img_16" />
+
+    <TextView
+        android:id="@+id/month_year_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <!-- 日曆 GridView -->
+
+    <!-- 生成報告按鈕 -->
+
+    <GridView
+        android:id="@+id/calendar_grid"
+        android:layout_width="wrap_content"
+        android:layout_height="653dp"
+        android:columnWidth="40dp"
+        android:horizontalSpacing="8dp"
+        android:numColumns="6"
+        android:paddingTop="50dp"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="8dp" />
+
+    <Button
+        android:id="@+id/btn_generate_report"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="生成報告"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+        android:padding="12dp"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#A6C4E5"/>
+</LinearLayout>

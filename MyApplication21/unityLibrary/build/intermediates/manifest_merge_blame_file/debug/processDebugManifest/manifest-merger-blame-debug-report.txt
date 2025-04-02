@@ -1,0 +1,126 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    xmlns:tools="http://schemas.android.com/tools"
+4    package="com.unity3d.player" >
+5
+6    <uses-sdk android:minSdkVersion="23" />
+7
+8    <uses-feature android:glEsVersion="0x00030000" />
+8-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:3:3-52
+8-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:3:17-49
+9    <uses-feature
+9-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:4:3-91
+10        android:name="android.hardware.vulkan.version"
+10-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:4:17-63
+11        android:required="false" />
+11-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:4:64-88
+12    <uses-feature
+12-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:5:3-88
+13        android:name="android.hardware.touchscreen"
+13-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:5:17-60
+14        android:required="false" />
+14-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:5:61-85
+15    <uses-feature
+15-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:6:3-99
+16        android:name="android.hardware.touchscreen.multitouch"
+16-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:6:17-71
+17        android:required="false" />
+17-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:6:72-96
+18    <uses-feature
+18-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:7:3-108
+19        android:name="android.hardware.touchscreen.multitouch.distinct"
+19-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:7:17-80
+20        android:required="false" />
+20-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:7:81-105
+21
+22    <application
+22-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:8:3-21:17
+23        android:enableOnBackInvokedCallback="false"
+23-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:8:16-59
+24        android:extractNativeLibs="true" >
+24-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:8:60-92
+25        <meta-data
+25-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:9:5-69
+26            android:name="unity.splash-mode"
+26-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:9:16-48
+27            android:value="0" />
+27-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:9:49-66
+28        <meta-data
+28-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:10:5-74
+29            android:name="unity.splash-enable"
+29-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:10:16-50
+30            android:value="True" />
+30-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:10:51-71
+31        <meta-data
+31-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:11:5-78
+32            android:name="unity.launch-fullscreen"
+32-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:11:16-54
+33            android:value="True" />
+33-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:11:55-75
+34        <meta-data
+34-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:12:5-84
+35            android:name="unity.render-outside-safearea"
+35-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:12:16-60
+36            android:value="True" />
+36-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:12:61-81
+37        <meta-data
+37-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:13:5-81
+38            android:name="notch.config"
+38-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:13:16-43
+39            android:value="portrait|landscape" />
+39-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:13:44-78
+40        <meta-data
+40-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:14:5-84
+41            android:name="unity.auto-report-fully-drawn"
+41-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:14:16-60
+42            android:value="true" />
+42-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:14:61-81
+43        <meta-data
+43-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:15:5-80
+44            android:name="unity.auto-set-game-state"
+44-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:15:16-56
+45            android:value="true" />
+45-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:15:57-77
+46        <meta-data
+46-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:16:5-78
+47            android:name="unity.strip-engine-code"
+47-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:16:16-54
+48            android:value="true" />
+48-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:16:55-75
+49
+50        <activity
+50-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:17:5-20:16
+51            android:name="com.unity3d.player.UnityPlayerActivity"
+51-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:17:312-365
+52            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+52-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:17:15-196
+53            android:enabled="true"
+53-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:17:197-219
+54            android:exported="true"
+54-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:17:220-243
+55            android:hardwareAccelerated="false"
+55-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:17:244-279
+56            android:launchMode="singleTask"
+56-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:17:280-311
+57            android:resizeableActivity="false"
+57-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:17:366-400
+58            android:screenOrientation="fullUser"
+58-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:17:401-437
+59            android:theme="@style/UnityThemeSelector" >
+59-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:17:438-479
+60            <meta-data
+60-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:18:7-82
+61                android:name="unityplayer.UnityActivity"
+61-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:18:18-58
+62                android:value="true" />
+62-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:18:59-79
+63            <meta-data
+63-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:19:7-70
+64                android:name="notch_support"
+64-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:19:18-46
+65                android:value="true" />
+65-->C:\Users\zheng\AndroidStudioProjects\MyApplication22\unityLibrary\src\main\AndroidManifest.xml:19:47-67
+66        </activity>
+67    </application>
+68
+69</manifest>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="850.04dp"
+    android:background="@drawable/img_1">
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="244dp"
+        android:layout_height="50.31dp"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="85.45dp"
+        android:layout_marginTop="345.59dp"
+        android:background="@drawable/image4"
+        android:gravity="center"
+        android:hint="password"
+        android:scaleType="centerInside"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="244dp"
+        android:layout_height="50.31dp"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="85.45dp"
+        android:layout_marginTop="268.59dp"
+        android:background="@drawable/image3"
+        android:gravity="center"
+        android:hint="username"
+        android:scaleType="centerInside"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="258dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|left"
+        android:layout_marginTop="600.74dp"
+        android:layout_marginLeft="80.74dp"
+        android:backgroundTint="#A6C4E5"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:lineHeight="37.5dp"
+        android:maxLines="3"
+        android:text="登入"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:rippleColor="#08090D"
+        app:strokeColor="#D7D7D7" />
+
+    <TextView
+        android:id="@+id/register_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="450dp"
+        android:clickable="true"
+        android:text="沒有帳號？註冊"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnLogin" />
+
+    <TextView
+        android:id="@+id/forgot_password_link"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="100dp"
+        android:clickable="true"
+        android:text="忘記密碼？"
+        android:textColor="#5F5C5C"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="210dp"
+        android:layout_height="223dp"
+        android:layout_marginLeft="80.45dp"
+        android:layout_marginTop="50.59dp"
+        app:srcCompat="@drawable/mood" />
+
+    <TextView
+        android:layout_width="207dp"
+        android:layout_height="82dp"
+        android:layout_marginLeft="130.45dp"
+        android:layout_marginTop="220.59dp"
+        android:text="Mood Check"
+        android:textColor="#A6C4E5"
+        android:textSize="25sp" />
+
+</FrameLayout>
